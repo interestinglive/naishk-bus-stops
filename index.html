@@ -1,0 +1,227 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <title>Geocoding service</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <meta charset="utf-8" />
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+        * element that contains the map. */
+      #map {
+        height: 100%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+    <script>
+      var geocoder;
+      var map;
+      var store;
+      var bounds;
+      var routePoints = [
+        "Nord Anglia International School, Hong Kong",
+        "Larvotto (Road Entrance of Estate), Hong Kong",
+        "Chi Fu Fa Yuen, Hong Kong",
+        "Lower Baguio Villa, Hong Kong",
+        "Upper Baguio Villa, Hong Kong",
+        "Bel-Air Phase 4, Hong Kong",
+        "Bel-Air Phase 2, Hong Kong",
+        "Scenic Villa Drive/ Crown Terrace, Hong Kong",
+        "Kennedy Town Swimming Pool, Hong Kong",
+        "Central Ferry Pier No. 3, Hong Kong",
+        "2A Mount Davis Road, Hong Kong",
+        "142 Pokfulam Road, Hong Kong",
+        "The Belcher's, Hong Kong",
+        "Bonham Road, Hong Kong",
+        "70 Robinson Road, Hong Kong",
+        "Kennedy Road, Hong Kong",
+        "Monmouth Terrace, Hong Kong",
+        "Kennedy Road, Hong Kong",
+        "15 Conduit Road, Hong Kong",
+        "41 Conduit Road, Hong Kong",
+        "49 Conduit Road, Hong Kong",
+        "1 Po Shan Road, Hong Kong",
+        "14-36 Kotewall Road, Hong Kong",
+        "125 Robinson Road, Hong Kong",
+        "Lyttelton Road, Hong Kong",
+        "80 Robinson Road, Hong Kong",
+        "31 Robinson Road, Hong Kong",
+        "10 Robinson Road, Hong Kong",
+        "Mount Butler Road, Hong Kong",
+        "Tai Hang Road, Hong Kong",
+        "Blue Pool Road, Hong Kong",
+        "Sing Woo Road, Hong Kong",
+        "Ventris Road, Hong Kong",
+        "Link Road, Hong Kong",
+        "Leighton Road, Hong Kong",
+        "Braemar Hill Mansions, Hong Kong",
+        "Pacific Palisades, Hong Kong",
+        "Cloudview Road, Hong Kong",
+        "Viking Villas, Hong Kong",
+        "City Garden, Hong Kong",
+        "Nan Fung Sun Tsuen, Hong Kong",
+        "Kornhill, Hong Kong",
+        "The Floridian, Hong Kong",
+        "Island Resort, Hong Kong",
+        "Cityplaza, Hong Kong",
+        "Taikoo Shing , Hong Kong",
+        "Grand Promenade, Hong Kong",
+        "Sai Wan Ho, Hong Kong",
+        "Mei Foo, Hong Kong",
+        "Sham Shing Road, Hong Kong",
+        "Olympian City 1, Hong Kong",
+        "Olympian City 2, Hong Kong",
+        "The Victoria Towers, Hong Kong",
+        "Grand Austin, Hong Kong",
+        "The Arch, Hong Kong",
+        "The Harbourside, Hong Kong",
+        "Kowloon Station, Hong Kong",
+        "The Masterpiece, Hong Kong",
+        "Wylie Road, Hong Kong",
+        "Cox's Road, Hong Kong",
+        "Laguna Verde, Hong Kong",
+        "Harbourfront Landmark, Hong Kong",
+        "Whampoa Garden, Hong Kong",
+        "Stars by the Harbour, Hong Kong",
+        "Harbourfront Horizon, Hong Kong",
+        "Ma Tau Wai Road, Hong Kong",
+        "Grand Waterfront, Hong Kong",
+        "Argyle Street (Evangel Hospital), Hong Kong",
+        "Argyle Street (Bus Stop at The Astrid), Hong Kong",
+        "Argyle Street (Junction at Peace Avenue), Hong Kong",
+        "Waterloo Road (Junction at Peace Avenue), Hong Kong",
+        "Waterloo Road (Imperial Court Entrance), Hong Kong",
+        "Waterloo Road (Grand Excelsior Entrance) , Hong Kong",
+        "Kowloon Tong Station, Hong Kong",
+        "Boundary Street (Outside Kent Court), Hong Kong",
+        "Richland Garden, Hong Kong",
+        "The Ultima, Hong Kong",
+        "Mantin Heights, Hong Kong",
+        "Celestial Heights, Hong Kong",
+        "Lion Rise, Hong Kong",
+        "Aria, Hong Kong",
+        "Laguna City, Hong Kong",
+        "Hill Paramout, Hong Kong",
+        "Festival City, Hong Kong",
+        "Tai Wai Station , Hong Kong",
+        "Che Kung Temple Station, Hong Kong",
+        "The Beverly Hills, Hong Kong",
+        "Tai Po Market Station, Hong Kong",
+        "Providence Bay, Hong Kong",
+        "The Palazzo, Hong Kong",
+        "Worldwide Gardens, Hong Kong",
+        "Cheuk Yeung Road, Hong Kong",
+        "Sha Kok Mei Tsuen, Hong Kong",
+        "Sai Kung , Hong Kong",
+        "Po Lo Che/ Tui Min Hoi, Hong Kong",
+        "Hebe Haven , Hong Kong",
+        "Pak Wai , Hong Kong",
+        "Marina Cove Shopping Mall, Hong Kong",
+        "Heung Chung, Hong Kong",
+        "Ta Ku Ling Sun Tsuen, Hong Kong",
+        "Pik Uk, Hong Kong",
+        "Tam Wat Village, Hong Kong",
+        "Tsam Chuk Wan, Hong Kong",
+        "Chi Fai Path, Hong Kong",
+        "Yan Yee Road, Hong Kong",
+        "Wong Chuk Wan, Hong Kong",
+        "Ma On Shan, Hong Kong",
+        "Sheung Sze Wan , Hong Kong",
+        "Leung Fai Tin, Hong Kong",
+        "Ha Yueng, Hong Kong",
+        "Sheung Yeung 3, Hong Kong",
+        "HKUST Staff Quarter, Hong Kong",
+        "Silverstrand, Hong Kong",
+        "Silverstrand Road, Hong Kong",
+        "Silver Cape Road, Hong Kong",
+        "Po Toi O, Hong Kong",
+        "Yung Yung Road, Hong Kong",
+        "Mau Po, Hong Kong",
+        "Hang Hau Wing Lung Road , Hong Kong",
+        "Mang Kung Uk , Hong Kong",
+        "Wo Tong Kong, Hong Kong",
+        "The Beaumount, Hong Kong",
+        "The LOHAS, Phase 2, Hong Kong",
+        "Hemera, Hong Kong",
+        "Oscar by the Sea, Hong Kong",
+        "Hang Hau station, Hong Kong",
+        "Savannah , Hong Kong",
+        "The Wings IIIB, Hong Kong",
+        "Tseung Kwan O Station, Hong Kong",
+        "Tiu Keng Leng Station, Hong Kong",
+        "Ocean Shore, Hong Kong"
+      ];
+
+      function initMap() {
+        var map = new google.maps.Map(document.getElementById("map"), {
+          zoom: 20,
+          center: { lat: 22.396427, lng: 114.109497 }
+        });
+        geocoder = new google.maps.Geocoder();
+
+        store = JSON.parse(localStorage.getItem("busPoints"));
+        if (store == undefined) {
+          store = {};
+          localStorage.setItem("busPoints",  JSON.stringify(store));
+        }
+
+        codeAddress(geocoder, map);
+      }
+
+      function codeAddress(geocoder, map) {
+        bounds = new google.maps.LatLngBounds();
+        for (var i in routePoints) {
+          if (store[i] != undefined) {
+            placeaddress(store[i], map);
+          } else {
+            let address = routePoints[i];
+            lookupaddress(address, i, geocoder, map);
+          }
+        }
+      }
+
+      function lookupaddress(address, index, geocoder, map) {
+        geocoder.geocode({ address: address }, function(results, status) {
+          if (status === "OK") {
+            // save for ron
+            store[index] = results[0].geometry.location;
+            localStorage.setItem("busPoints", JSON.stringify(store));
+            placeaddress(results[0].geometry.location, map);
+          } else {
+            setTimeout(function() {
+              lookupaddress(address, index, geocoder, map);
+            }, 500);
+            console.log(
+              "Geocode was not successful for the following reason: " + status
+            );
+            console.log(address);
+          }
+        });
+      }
+
+      function placeaddress(location, map) {
+        map.setCenter(location);
+        var marker = new google.maps.Marker({
+          map: map,
+          position: location,
+          label:"A"
+        });
+        bounds.extend(marker.getPosition());
+        map.fitBounds(bounds);
+      }
+    </script>
+    <script
+      async
+      defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBLW0PdLrcymNBz9DnL8rXiQT5BiqK27wY&callback=initMap"
+    ></script>
+  </body>
+</html>
