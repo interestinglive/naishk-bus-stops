@@ -27,137 +27,315 @@
       var store;
       var bounds;
       var routePoints = [
-        "Nord Anglia International School, Hong Kong",
-        "Larvotto (Road Entrance of Estate), Hong Kong",
-        "Chi Fu Fa Yuen, Hong Kong",
-        "Lower Baguio Villa, Hong Kong",
-        "Upper Baguio Villa, Hong Kong",
-        "Bel-Air Phase 4, Hong Kong",
-        "Bel-Air Phase 2, Hong Kong",
-        "Scenic Villa Drive/ Crown Terrace, Hong Kong",
-        "Kennedy Town Swimming Pool, Hong Kong",
-        "Central Ferry Pier No. 3, Hong Kong",
-        "2A Mount Davis Road, Hong Kong",
-        "142 Pokfulam Road, Hong Kong",
-        "The Belcher's, Hong Kong",
-        "Bonham Road, Hong Kong",
-        "70 Robinson Road, Hong Kong",
-        "Kennedy Road, Hong Kong",
-        "Monmouth Terrace, Hong Kong",
-        "Kennedy Road, Hong Kong",
-        "15 Conduit Road, Hong Kong",
-        "41 Conduit Road, Hong Kong",
-        "49 Conduit Road, Hong Kong",
-        "1 Po Shan Road, Hong Kong",
-        "14-36 Kotewall Road, Hong Kong",
-        "125 Robinson Road, Hong Kong",
-        "Lyttelton Road, Hong Kong",
-        "80 Robinson Road, Hong Kong",
-        "31 Robinson Road, Hong Kong",
-        "10 Robinson Road, Hong Kong",
-        "Mount Butler Road, Hong Kong",
-        "Tai Hang Road, Hong Kong",
-        "Blue Pool Road, Hong Kong",
-        "Sing Woo Road, Hong Kong",
-        "Ventris Road, Hong Kong",
-        "Link Road, Hong Kong",
-        "Leighton Road, Hong Kong",
-        "Braemar Hill Mansions, Hong Kong",
-        "Pacific Palisades, Hong Kong",
-        "Cloudview Road, Hong Kong",
-        "Viking Villas, Hong Kong",
-        "City Garden, Hong Kong",
-        "Nan Fung Sun Tsuen, Hong Kong",
-        "Kornhill, Hong Kong",
-        "The Floridian, Hong Kong",
-        "Island Resort, Hong Kong",
-        "Cityplaza, Hong Kong",
-        "Taikoo Shing , Hong Kong",
-        "Grand Promenade, Hong Kong",
-        "Sai Wan Ho, Hong Kong",
-        "Mei Foo, Hong Kong",
-        "Sham Shing Road, Hong Kong",
-        "Olympian City 1, Hong Kong",
-        "Olympian City 2, Hong Kong",
-        "The Victoria Towers, Hong Kong",
-        "Grand Austin, Hong Kong",
-        "The Arch, Hong Kong",
-        "The Harbourside, Hong Kong",
-        "Kowloon Station, Hong Kong",
-        "The Masterpiece, Hong Kong",
-        "Wylie Road, Hong Kong",
-        "Cox's Road, Hong Kong",
-        "Laguna Verde, Hong Kong",
-        "Harbourfront Landmark, Hong Kong",
-        "Whampoa Garden, Hong Kong",
-        "Stars by the Harbour, Hong Kong",
-        "Harbourfront Horizon, Hong Kong",
-        "Ma Tau Wai Road, Hong Kong",
-        "Grand Waterfront, Hong Kong",
-        "Argyle Street (Evangel Hospital), Hong Kong",
-        "Argyle Street (Bus Stop at The Astrid), Hong Kong",
-        "Argyle Street (Junction at Peace Avenue), Hong Kong",
-        "Waterloo Road (Junction at Peace Avenue), Hong Kong",
-        "Waterloo Road (Imperial Court Entrance), Hong Kong",
-        "Waterloo Road (Grand Excelsior Entrance) , Hong Kong",
-        "Kowloon Tong Station, Hong Kong",
-        "Boundary Street (Outside Kent Court), Hong Kong",
-        "Richland Garden, Hong Kong",
-        "The Ultima, Hong Kong",
-        "Mantin Heights, Hong Kong",
-        "Celestial Heights, Hong Kong",
-        "Lion Rise, Hong Kong",
-        "Aria, Hong Kong",
-        "Laguna City, Hong Kong",
-        "Hill Paramout, Hong Kong",
-        "Festival City, Hong Kong",
-        "Tai Wai Station , Hong Kong",
-        "Che Kung Temple Station, Hong Kong",
-        "The Beverly Hills, Hong Kong",
-        "Tai Po Market Station, Hong Kong",
-        "Providence Bay, Hong Kong",
-        "The Palazzo, Hong Kong",
-        "Worldwide Gardens, Hong Kong",
-        "Cheuk Yeung Road, Hong Kong",
-        "Sha Kok Mei Tsuen, Hong Kong",
-        "Sai Kung , Hong Kong",
-        "Po Lo Che/ Tui Min Hoi, Hong Kong",
-        "Hebe Haven , Hong Kong",
-        "Pak Wai , Hong Kong",
-        "Marina Cove Shopping Mall, Hong Kong",
-        "Heung Chung, Hong Kong",
-        "Ta Ku Ling Sun Tsuen, Hong Kong",
-        "Pik Uk, Hong Kong",
-        "Tam Wat Village, Hong Kong",
-        "Tsam Chuk Wan, Hong Kong",
-        "Chi Fai Path, Hong Kong",
-        "Yan Yee Road, Hong Kong",
-        "Wong Chuk Wan, Hong Kong",
-        "Ma On Shan, Hong Kong",
-        "Sheung Sze Wan , Hong Kong",
-        "Leung Fai Tin, Hong Kong",
-        "Ha Yueng, Hong Kong",
-        "Sheung Yeung 3, Hong Kong",
-        "HKUST Staff Quarter, Hong Kong",
-        "Silverstrand, Hong Kong",
-        "Silverstrand Road, Hong Kong",
-        "Silver Cape Road, Hong Kong",
-        "Po Toi O, Hong Kong",
-        "Yung Yung Road, Hong Kong",
-        "Mau Po, Hong Kong",
-        "Hang Hau Wing Lung Road , Hong Kong",
-        "Mang Kung Uk , Hong Kong",
-        "Wo Tong Kong, Hong Kong",
-        "The Beaumount, Hong Kong",
-        "The LOHAS, Phase 2, Hong Kong",
-        "Hemera, Hong Kong",
-        "Oscar by the Sea, Hong Kong",
-        "Hang Hau station, Hong Kong",
-        "Savannah , Hong Kong",
-        "The Wings IIIB, Hong Kong",
-        "Tseung Kwan O Station, Hong Kong",
-        "Tiu Keng Leng Station, Hong Kong",
-        "Ocean Shore, Hong Kong"
+        {
+          route: "A",
+          stops: [
+            "Larvotto (Road Entrance of Estate)",
+            "Chi Fu Fa Yuen",
+            "Bel-Air Phase 4",
+            "Bel-Air Phase 2",
+            "Scenic Villa Drive/ Crown Terrace",
+            "Kennedy Town Swimming Pool",
+            "Central Ferry Pier No. 3"
+          ]
+        },
+        {
+          route: "B",
+          stops: [
+            "Lower Baguio Villa",
+            "Upper Baguio Villa",
+            "2A Mount Davis Road",
+            "142 Pokfulam Road",
+            "The Belcher's",
+            "Bonham Road",
+            "Visual Arts, HK Park, Kennedy Road",
+            "Monmouth Terrace",
+            "Bamboo Grove, Kennedy Road"
+          ]
+        },
+        {
+          route: "C",
+          stops: [
+            "15 Conduit Road",
+            "41 Conduit Road",
+            "49 Conduit Road",
+            "1 Po Shan Road",
+            "14-36 Kotewall Road",
+            "80 Robinson Road",
+            "70 Robinson Road",
+            "31 Robinson Road",
+            "10 Robinson Road",
+            "9 Old Peak Road"
+          ]
+        },
+        {
+          route: "W",
+          stops: [
+            "8 Old Peak Road",
+            "Hillsborough Court",
+            "Dynasty Court",
+            "9 Old Peak Road"
+          ]
+        },
+        {
+          route: "Y",
+          stops: [
+            "33-37 Plantation Road",
+            "20 Mount Austin Road",
+            "9 Coombe Road",
+            "Tregunter Path",
+            "5 May Road"
+          ]
+        },
+        {
+          route: "D",
+          stops: [
+            "Redhill Peninsula",
+            "Pacific View",
+            "Stanley Village Road",
+            "Stanley Plaza",
+            "Chung Hom Kok"
+          ]
+        },
+
+        {
+          route: "D1",
+          stops: [
+            "57-61 South Bay Road",
+            "Burnside Estate",
+            "Sinopec Gas Station, South Bay Road",
+            "101 Repulse Bay Road"
+          ]
+        },
+
+        {
+          route: "E",
+          stops: [
+            "127 Repulse Bay Road",
+            "129 Repulse Bay Road",
+            "Hong Kong Parkview",
+            "63 Deep Water Bay Road",
+            "11 Shouson Hill Road East"
+          ]
+        },
+
+        {
+          route: "F",
+          stops: [
+            "46 Stubbs Road",
+            "41D Stubbs Road",
+            "28 Stubbs Road",
+            "Shiu Fai Terrace",
+            "Villa Lotto",
+            "Wang Fung Terrace",
+            "Trafalgar Court",
+            "True Light Middle School, Tai Hang Road",
+            "EFCC Tung Fook Church, Moreton Terrace",
+            "Manning, Ngan Mok Street, Tin Hau"
+          ]
+        },
+
+        {
+          route: "G",
+          stops: [
+            "Mount Butler Road",
+            "Elegant Court, Tai Hang Road",
+            "Blue Pool Road",
+            "Caltex, Sing Woo Road",
+            "Tam Kung Temple, Ventris Road",
+            "Winfield Building, Ventris Road",
+            "Leighton Hill, Link Road",
+            "Leigyinn Building, Leighton Road"
+          ]
+        },
+
+        {
+          route: "H",
+          stops: [
+            "No. 25 Entrance, Braemar Hill Mansions",
+            "No. 35 Entrance, Braemar Hill Mansions",
+            "Pacific Palisades",
+            "Cloudview Road (Maiden Court)",
+            "Viking Villas",
+            "City Garden (Hang Seng Bank at Electric Road)",
+            "Nan Fung Sun Tsuen, Blk 3",
+            "Kornhill (Block H)",
+            "Kornhill (Block C)",
+            "Kornhill (Block M)",
+            "The Floridian"
+          ]
+        },
+
+        {
+          route: "J",
+          stops: [
+            "Island Resort (Carpark Entrance at Siu Sai Wan Road, outside Tower 3)",
+            "Cityplaza I (HSBC)",
+            "Taikoo Shing (Bus stop outside Lotus Mansion)",
+            "Grand Promenade (Restricted Zone Sign outside Bus Terminus, Oi Kan Road) ",
+            "Sai Wan Ho (Bus stop outside Mun Sang College, HK Island)"
+          ]
+        },
+
+        {
+          route: "K",
+          stops: [
+            "Mei Foo (7-11 Convenience Store at Po Lun Road)",
+            "Mei Lai Road, Mei Foo",
+            "Sham Shing Road (Bus Stop at Sham Shui Po Government Primary School)",
+            "Olympian City 1, Hoi Fan Road",
+            "Olympian City 2, Hoi Fan Road"
+          ]
+        },
+
+        {
+          route: "L",
+          stops: [
+            "BP International House, Austin Road",
+            "Grand Austin",
+            "The Arch",
+            "The Harbourside",
+            "Kowloon Station"
+          ]
+        },
+
+        {
+          route: "M",
+          stops: [
+            "The Regalia",
+            "Wylie Road (Junction at Parc Palais)",
+            "Cox's Road (opposite to No. 3 Entrance)",
+            "Laguna Verde (Taxi Stand outside Tower 10)",
+            "Harbourfront Landmark",
+            "Whampoa Garden (Café De Coral, Site 9)",
+            "Stars by the Harbour, Oi King Street",
+            "Harbourfront Horizon (Lay-by at Hung Luen Road)",
+            "Harbourview Horizon (Bus Stop at Hung Lok Road)",
+            "Ma Tau Wai Road (M8, Carlton Court)",
+            "1 Grand Waterfront"
+          ]
+        },
+
+        {
+          route: "N",
+          stops: [
+            "Evangel Hospital, Argyle Street",
+            "The Astrid, Argyle Street, Ho Man Tin",
+            "Argyle Street (Junction at Peace Avenue)",
+            "Waterloo Road (Junction at Peace Avenue) ",
+            "Waterloo Road (Imperial Court Entrance)",
+            "Waterloo Road (Grand Excelsior Entrance)",
+            "St. Teresa's Church, Prince Edward Road West",
+            "Embankment Road",
+            "Holy Family School, Tim Fuk Road"
+          ]
+        },
+
+        {
+          route: "P",
+          stops: [
+            "The Ultima, Fat Kwong Street",
+            "Mantin Heights, Sheung Lok Street",
+            "Celestial Heights",
+            "Lion Rise, Muk Lun Street",
+            "Aria",
+            "Laguna City plaza"
+          ]
+        },
+
+        {
+          route: "Q",
+          stops: [
+            "Granville Garden, Pik Tin Street",
+            "Hill Paramount (Main Gate at Hin Tai Street)",
+            "Festival City",
+            "Tai Wai Station",
+            "Che Kung Temple Station"
+          ]
+        },
+
+        {
+          route: "Z",
+          stops: [
+            "The Beverly Hills",
+            "Tai Po Market Station",
+            "The Graces, Providence Bay",
+            "The Palazzo",
+            "Worldwide Gardens"
+          ]
+        },
+
+        {
+          route: "R",
+          stops: [
+            "Cheuk Yeung Road",
+            "Sha Kok Mei Tsuen",
+            "Sai Kung Town Hall",
+            "Po Lo Che/ Tui Min Hoi",
+            "Habitat",
+            "Pak Wai",
+            "Marina Cove Shopping Mall",
+            "Heung Chung",
+            "Ta Ku Ling Sun Tsuen",
+            "Pik Uk"
+          ]
+        },
+
+        {
+          route: "S",
+          stops: [
+            "Tam Wat Village",
+            "Tsam Chuk Wan",
+            "Chi Fai Path",
+            "Yan Yee Road",
+            "Wong Chuk Wan, Tai Mong Tsai Road",
+            "Wong Chuk Wan, Sai Sha Road",
+            "Ma On Shan"
+          ]
+        },
+
+        { route: "T", stops: ["Sheung Sze Wan", "Leung Fai Tin", "Ha Yueng"] },
+
+        {
+          route: "T1",
+          stops: [
+            "HKUST Staff Quarter (no. 37-48)",
+            "Silverstrand (Junction at Silver Crest Road/ Silver Lake Road)",
+            "Silverstrand Road (Junction at Silver Crest Road/ Silverstrand Beach Road)",
+            "Hang Hau Wing Lung Road",
+            "Mang Kung Uk",
+            "Wo Tong Kong",
+            "La Casa Bella, Silver Cape Road"
+          ]
+        },
+
+        {
+          route: "U",
+          stops: [
+            "Po Toi O",
+            "82 Yung Yung Road",
+            "Mau Po (Clearwater Bay Road/ Lung Ha Wan Road)",
+            "Portofino",
+            "Sheung Yeung 3"
+          ]
+        },
+
+        {
+          route: "V",
+          stops: [
+            "Tseung Kwan O Tseung",
+            "The Beaumount",
+            "The LOHAS, Phase 2",
+            "Hemera",
+            "Oscar by the Sea",
+            "Hang Hau station",
+            "Savannah",
+            "The Wings IIIB",
+            "Tseung Kwan O Station, Po Yap Road",
+            "Tiu Keng Leng Station",
+            "Ocean Shore"
+          ]
+        }
       ];
 
       function initMap() {
@@ -170,7 +348,7 @@
         store = JSON.parse(localStorage.getItem("busPoints"));
         if (store == undefined) {
           store = {};
-          localStorage.setItem("busPoints",  JSON.stringify(store));
+          localStorage.setItem("busPoints", JSON.stringify(store));
         }
 
         codeAddress(geocoder, map);
@@ -179,49 +357,71 @@
       function codeAddress(geocoder, map) {
         bounds = new google.maps.LatLngBounds();
         for (var i in routePoints) {
-          if (store[i] != undefined) {
-            placeaddress(store[i], map);
-          } else {
-            let address = routePoints[i];
-            lookupaddress(address, i, geocoder, map);
+          for (var j in routePoints[i].stops) {
+            if (store[routePoints[i].route + i + j] != undefined) {
+            // console.log("found address: " + routePoints[i].route + j);
+              placeaddress(
+                store[routePoints[i].route + i + j],
+                routePoints[i].route,
+                map
+              );
+            } else {
+            
+              let address = routePoints[i].stops[j];
+              lookupaddress(
+                address,
+                routePoints[i].route,
+                "" + i + j,
+                geocoder,
+                map
+              );
+            }
           }
         }
       }
 
-      function lookupaddress(address, index, geocoder, map) {
-        geocoder.geocode({ address: address }, function(results, status) {
+      function lookupaddress(address, route, index, geocoder, map) {
+        geocoder.geocode({ address: address + ", Hong Kong" }, function(
+          results,
+          status
+        ) {
           if (status === "OK") {
             // save for ron
-            store[index] = results[0].geometry.location;
+            store[route + index] = results[0].geometry.location;
             localStorage.setItem("busPoints", JSON.stringify(store));
-            placeaddress(results[0].geometry.location, map);
+            placeaddress(results[0].geometry.location, route, map);
           } else {
             setTimeout(function() {
-              lookupaddress(address, index, geocoder, map);
+              lookupaddress(address, route, index, geocoder, map);
             }, 500);
             console.log(
               "Geocode was not successful for the following reason: " + status
             );
-            console.log(address);
+            console.log(route + " " + address);
           }
         });
       }
 
-      function placeaddress(location, map) {
+      function placeaddress(location, route, map) {
         map.setCenter(location);
         var marker = new google.maps.Marker({
           map: map,
           position: location,
-          label:"A"
+          label: route
         });
         bounds.extend(marker.getPosition());
         map.fitBounds(bounds);
       }
     </script>
-    <script
+    <!--<script
       async
       defer
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBLW0PdLrcymNBz9DnL8rXiQT5BiqK27wY&callback=initMap"
+    ></script> -->
+    <script
+      async
+      defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAoOAy91No45RPz5Lrx3AiO4wZ7V8fsI58&callback=initMap"
     ></script>
   </body>
 </html>
